@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>78/78</span>
+                <span class='fraction'>79/79</span>
             </div>
         
             
@@ -37,9 +37,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.5% </span>
+                <span class="strong">31.71% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/40</span>
+                <span class='fraction'>13/41</span>
             </div>
         
             
@@ -54,12 +54,6 @@
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
-        <template id="filterTemplate">
-            <div class="quiet">
-                Filter:
-                <input oninput="onInput()" type="search" id="fileSearch">
-            </div>
-        </template>
     </div>
     <div class='status-line high'></div>
     <pre><table class="coverage">
@@ -110,7 +104,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -122,7 +116,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -138,9 +132,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export { <span class="fstat-no" title="function not covered" >default </span>as changeFontSize, <span class="fstat-no" title="function not covered" >FONT_SIZES </span>} from './format/changeFontSize';
 export { <span class="fstat-no" title="function not covered" >default </span>as clearBlockFormat } from './format/clearBlockFormat';
 export { default as clearFormat } from './format/clearFormat';
@@ -149,7 +143,7 @@ export { <span class="fstat-no" title="function not covered" >default </span>as 
 export { <span class="fstat-no" title="function not covered" >default </span>as insertEntity } from './format/insertEntity';
 export { <span class="fstat-no" title="function not covered" >default </span>as insertImage } from './format/insertImage';
 export { <span class="fstat-no" title="function not covered" >default </span>as insertTable } from './table/insertTable';
-export { <span class="fstat-no" title="function not covered" >default </span>as editTable } from './table/editTable';
+export { default as editTable } from './table/editTable';
 export { <span class="fstat-no" title="function not covered" >default </span>as formatTable } from './table/formatTable';
 export { default as removeLink } from './format/removeLink';
 export { default as replaceWithNode } from './format/replaceWithNode';
@@ -177,18 +171,19 @@ export { default as toggleUnderline } from './format/toggleUnderline';
 export { <span class="fstat-no" title="function not covered" >default </span>as toggleHeader } from './format/toggleHeader';
 export { <span class="fstat-no" title="function not covered" >default </span>as applyCellShading } from './table/applyCellShading';
 &nbsp;
-export { <span class="fstat-no" title="function not covered" >default </span>as toggleListType } from './utils/toggleListType';
-export { <span class="fstat-no" title="function not covered" >default </span>as blockFormat } from './utils/blockFormat';
-export { <span class="fstat-no" title="function not covered" >default </span>as experimentCommitListChains } from './experiment/experimentCommitListChains';
+export { default as toggleListType } from './utils/toggleListType';
+export { default as blockFormat } from './utils/blockFormat';
+export { default as commitListChains, <span class="fstat-no" title="function not covered" >experimentCommitListChains </span>} from './utils/commitListChains';
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Jun 03 2022 14:21:22 GMT+0000 (Coordinated Universal Time)
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Thu Dec 15 2022 06:01:51 GMT+0000 (Coordinated Universal Time)
             </div>
+        </div>
         <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {

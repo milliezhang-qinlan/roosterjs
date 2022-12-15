@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.86% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -54,12 +54,6 @@
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
-        <template id="filterTemplate">
-            <div class="quiet">
-                Filter:
-                <input oninput="onInput()" type="search" id="fileSearch">
-            </div>
-        </template>
     </div>
     <div class='status-line high'></div>
     <pre><table class="coverage">
@@ -86,41 +80,47 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">573x</span>
-<span class="cline-any cline-yes">572x</span>
+<span class="cline-any cline-yes">445x</span>
+<span class="cline-any cline-yes">444x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">138x</span>
-<span class="cline-any cline-yes">138x</span>
-<span class="cline-any cline-yes">138x</span>
-<span class="cline-any cline-yes">138x</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">102x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">138x</span>
+<span class="cline-any cline-yes">102x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">572x</span>
-<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-yes">444x</span>
+<span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">500x</span>
+<span class="cline-any cline-yes">391x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import getObjectKeys from '../jsUtils/getObjectKeys';
+&nbsp;
+/**
  * Set styles to an HTML element. If styles are empty, remove 'style' attribute
  * @param element The element to set styles
  * @param styles The styles to set, in name-value pair format
  */
 export default function setStyles(element: HTMLElement, styles: Record&lt;string, string&gt;) {
     if (element) {
-        const style = Object.keys(styles || {})
+        const style = getObjectKeys(styles || {})
             .map(name =&gt; {
                 const value: string | null = styles[name];
                 const trimmedName = name ? name.trim() : null;
-                const trimmedValue = value ? value.trim() : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+                const trimmedValue = value ? value.trim() : null;
                 return trimmedName &amp;&amp; trimmedValue ? `${trimmedName}:${trimmedValue}` : null;
             })
             .filter(x =&gt; x)
@@ -138,9 +138,10 @@ export default function setStyles(element: HTMLElement, styles: Record&lt;string
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
-                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri Jun 03 2022 14:21:22 GMT+0000 (Coordinated Universal Time)
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Thu Dec 15 2022 06:01:51 GMT+0000 (Coordinated Universal Time)
             </div>
+        </div>
         <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
