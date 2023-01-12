@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for roosterjs-content-model/lib/modelApi/selection/findParentGroup.ts</title>
+    <title>Code coverage report for roosterjs-content-model/lib/modelApi/common/insertContent.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,27 +19,27 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelApi/selection</a> findParentGroup.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelApi/common</a> insertContent.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -90,9 +90,13 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -101,13 +105,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -115,46 +116,51 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelBlock } from '../../publicTypes/block/ContentModelBlock';
-import { ContentModelBlockGroup } from '../../publicTypes/group/ContentModelBlockGroup';
-import { ContentModelSelection } from './getSelections';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import domToContentModel from '../../publicApi/domToContentModel';
+import { ContentModelDocument } from '../../publicTypes/group/ContentModelDocument';
+import { mergeModel } from '../../modelApi/common/mergeModel';
+import { safeInstanceOf, wrap } from 'roosterjs-editor-dom';
+import { setSelection } from '../../modelApi/selection/setSelection';
 &nbsp;
 /**
  * @internal
  */
-export function findParentGroup(
-    block: ContentModelBlock | ContentModelBlockGroup,
-    selections: ContentModelSelection[]
-): ContentModelBlockGroup | null {
-    for (let i = 0; i &lt; selections.length; i++) {
-        const selection = selections[i];
-&nbsp;
-        if (selection.paragraph == block) {
-            return selection.path[0] || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
-        } else if (isBlockGroup(block)) {
-            const index = selection.path.indexOf(block);
-&nbsp;
-            if (index &gt;= 0) {
-                return selection.path[index + 1] || <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
-            }
-        }
+export function insertContent(
+    model: ContentModelDocument,
+    htmlContent: DocumentFragment | HTMLElement | ContentModelDocument,
+    isFromDarkMode?: boolean
+) {
+    if (safeInstanceOf(htmlContent, 'DocumentFragment')) {
+        htmlContent = wrap(htmlContent, 'span');
     }
 &nbsp;
-    return null;
-}
+    if (safeInstanceOf(htmlContent, 'HTMLElement')) {
+        htmlContent = domToContentModel(
+            htmlContent,
+            {
+                isDarkMode: !!isFromDarkMode,
+                zoomScale: 1,
+                isRightToLeft: false,
+            },
+            {
+                includeRoot: true,
+            }
+        );
+    }
 &nbsp;
-function isBlockGroup(
-    block: ContentModelBlock | ContentModelBlockGroup
-): block is ContentModelBlockGroup {
-    return !!(&lt;ContentModelBlockGroup&gt;block).blockGroupType;
+    setSelection(htmlContent);
+    mergeModel(model, htmlContent);
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -163,7 +169,7 @@ function isBlockGroup(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 15 2022 06:01:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 06:42:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

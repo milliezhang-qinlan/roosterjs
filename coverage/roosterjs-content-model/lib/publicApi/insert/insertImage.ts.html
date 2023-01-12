@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for roosterjs-content-model/lib/modelApi/list/getFirstFocusedListItem.ts</title>
+    <title>Code coverage report for roosterjs-content-model/lib/publicApi/insert/insertImage.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelApi/list</a> getFirstFocusedListItem.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/publicApi/insert</a> insertImage.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -74,39 +74,57 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelDocument } from '../../publicTypes/group/ContentModelDocument';
-import { ContentModelListItem } from '../../publicTypes/group/ContentModelListItem';
-import { getOperationalBlocks } from '../common/getOperationalBlocks';
-import { getSelections } from '../selection/getSelections';
-import { isBlockGroupOfType } from '../common/isBlockGroupOfType';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { formatWithContentModel } from '../utils/formatWithContentModel';
+import { IExperimentalContentModelEditor } from '../../publicTypes/IExperimentalContentModelEditor';
+import { insertContent } from '../../modelApi/common/insertContent';
+import { readFile } from 'roosterjs-editor-dom';
 &nbsp;
 /**
- * @internal
+ * Insert an image into current selected position
+ * @param editor The editor to operate on
+ * @param file Image Blob file
  */
-export function getFirstFocusedListItem(model: ContentModelDocument): ContentModelListItem | null {
-    const paragraphs = getSelections(model);
-    const currentListItem = getOperationalBlocks&lt;ContentModelListItem&gt;(paragraphs, ['ListItem'])[0];
+export default function insertImage(editor: IExperimentalContentModelEditor, file: File) {
+    readFile(file, dataUrl =&gt; {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (dataUrl &amp;&amp; !editor.isDisposed()) {
+            formatWithContentModel(editor, 'insertImage', model =&gt; {
+                const image = editor.getDocument().createElement('img');
 &nbsp;
-    return currentListItem &amp;&amp; isBlockGroupOfType(currentListItem, 'ListItem')
-        ? currentListItem
-        : null;
+                image.src = dataUrl;
+                insertContent(model, image);
+                return true;
+            });
+        }
+    });
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -115,7 +133,7 @@ export function getFirstFocusedListItem(model: ContentModelDocument): ContentMod
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 15 2022 06:01:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 06:42:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

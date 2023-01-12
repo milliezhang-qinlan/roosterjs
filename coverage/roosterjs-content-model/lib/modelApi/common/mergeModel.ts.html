@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for roosterjs-content-model/lib/modelApi/selection/getSelections.ts</title>
+    <title>Code coverage report for roosterjs-content-model/lib/modelApi/common/mergeModel.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelApi/selection</a> getSelections.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelApi/common</a> mergeModel.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.73% </span>
+                <span class="strong">95.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>43/44</span>
+                <span class='fraction'>95/99</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.67% </span>
+                <span class="strong">74.7% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>42/43</span>
+                <span class='fraction'>62/83</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.56% </span>
+                <span class="strong">95.74% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>40/41</span>
+                <span class='fraction'>90/94</span>
             </div>
         
             
@@ -250,180 +250,104 @@
 <a name='L191'></a><a href='#L191'>191</a>
 <a name='L192'></a><a href='#L192'>192</a>
 <a name='L193'></a><a href='#L193'>193</a>
-<a name='L194'></a><a href='#L194'>194</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">203x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">203x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">203x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">201x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">201x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">203x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">54x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">261x</span>
-<span class="cline-any cline-yes">261x</span>
-<span class="cline-any cline-yes">261x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">308x</span>
-<span class="cline-any cline-yes">308x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">308x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">54x</span>
-<span class="cline-any cline-yes">54x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">251x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">251x</span>
-<span class="cline-any cline-yes">303x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">303x</span>
-<span class="cline-any cline-yes">218x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">85x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">251x</span>
-<span class="cline-any cline-yes">194x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">251x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">261x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -433,208 +357,314 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelBlockGroup } from '../../publicTypes/group/ContentModelBlockGroup';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { addSegment } from './addSegment';
+import { applyTableFormat } from '../table/applyTableFormat';
+import { ContentModelBlock } from '../../publicTypes/block/ContentModelBlock';
+import { ContentModelDocument } from '../../publicTypes/group/ContentModelDocument';
+import { ContentModelListItem } from '../../publicTypes/group/ContentModelListItem';
 import { ContentModelParagraph } from '../../publicTypes/block/ContentModelParagraph';
-import { ContentModelSegment } from '../../publicTypes/segment/ContentModelSegment';
+import { ContentModelTable } from '../../publicTypes/block/ContentModelTable';
+import { createListItem } from '../creators/createListItem';
+import { createParagraph } from '../creators/createParagraph';
+import { createSelectionMarker } from '../creators/createSelectionMarker';
+import { createTableCell } from '../creators/createTableCell';
+import { deleteSelection, InsertPosition } from '../selection/deleteSelections';
+import { getClosestAncestorBlockGroupIndex } from './getClosestAncestorBlockGroupIndex';
+import { normalizeContentModel } from './normalizeContentModel';
+import { normalizeTable } from '../table/normalizeTable';
 &nbsp;
 /**
  * @internal
  */
-export interface ContentModelSelection {
-    /**
-     * Paragraph that contains selection.
-     *
-     * When GetSelectionOptions.includeFormatHolder is passed into getSelections(), it is possible paragraph is null when there are
-     * selections that are not directly under a paragraph, in that case the segments will contains formatHolder segment.
-     */
-    paragraph: ContentModelParagraph | null;
+export function mergeModel(target: ContentModelDocument, source: ContentModelDocument) {
+    const insertPosition = deleteSelection(target);
 &nbsp;
-    /**
-     * Selected segments
-     *
-     * When GetSelectionOptions.includeFormatHolder is passed into getSelections(), it is possible paragraph is null when there are
-     * selections that are not directly under a paragraph, in that case the segments will contains formatHolder segment.
-     */
-    segments: ContentModelSegment[];
+    if (insertPosition) {
+        for (let i = 0; i &lt; source.blocks.length; i++) {
+            const block = source.blocks[i];
 &nbsp;
-    /**
-     * A path that combines all parents of ContentModelBlockGroup of this paragraph. First element is the direct parent group, then next
-     * one is first one's parent group, until last one, the root document group.
-     * e.g. A table contains a list with a paragraph, like:
-     * ContentModelDocument
-     *   \ ContentModelTable
-     *       \ ContentModelListItem
-     *           \ ContentModelParagraph
-     * Then the path will be:
-     * [ContentModelListItem, ContentModelDocument]
-     */
-    path: ContentModelBlockGroup[];
-}
+            switch (block.blockType) {
+                case 'Paragraph':
+                    mergeParagraph(insertPosition, block, i == 0);
+                    break;
 &nbsp;
-/**
- * @internal
- */
-export interface GetSelectionOptions {
-    /**
-     * When pass true, format holder (e.g. ContentModelListItem.formatHolder) is also included in selected segment in result.
-     */
-    includeFormatHolder?: boolean;
+<span class="branch-1 cbranch-no" title="branch not covered" >                case 'Divider':</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >                case 'Entity':</span>
+<span class="cstat-no" title="statement not covered" >                    insertBlock(insertPosition, block);</span>
+<span class="cstat-no" title="statement not covered" >                    break;</span>
 &nbsp;
-    /**
-     * When pass true, if selection is started from the end of a paragraph, or ended at the beginning of a paragraph,
-     * those paragraphs are also included in result
-     */
-    includeUnmeaningfulSelectedParagraph?: boolean;
-}
+                case 'Table':
+                    mergeTable(insertPosition, block, source);
+                    break;
 &nbsp;
-/**
- * @internal
- */
-export function getSelections(
-    group: ContentModelBlockGroup,
-    options?: GetSelectionOptions
-): ContentModelSelection[] {
-    const result: ContentModelSelection[] = [];
-&nbsp;
-    getSelectionsInternal([group], result, options);
-&nbsp;
-    if (!options || !options.includeUnmeaningfulSelectedParagraph) {
-        // Remove tail paragraph if first selection marker is the only selection
-        if (
-            result.length &gt; 1 &amp;&amp;
-            isOnlySelectionMarkerSelected(result, false /*checkFirstParagraph*/)
-        ) {
-            result.pop();
-        }
-&nbsp;
-        // Remove head paragraph if first selection marker is the only selection
-        if (
-            result.length &gt; 1 &amp;&amp;
-            isOnlySelectionMarkerSelected(result, true /*checkFirstParagraph*/)
-        ) {
-            result.shift();
-        }
-    }
-&nbsp;
-    return result;
-}
-&nbsp;
-function isOnlySelectionMarkerSelected(
-    paragraphs: ContentModelSelection[],
-    checkFirstParagraph: boolean
-): boolean {
-    const paragraph = paragraphs[checkFirstParagraph ? 0 : paragraphs.length - 1].paragraph;
-&nbsp;
-    if (!paragraph) {
-        return false;
-    } else {
-        const selectedSegments = paragraph.segments.filter(s =&gt; s.isSelected);
-&nbsp;
-        return (
-            selectedSegments.length == 1 &amp;&amp;
-            selectedSegments[0].segmentType == 'SelectionMarker' &amp;&amp;
-            selectedSegments[0] ==
-                paragraph.segments[checkFirstParagraph ? paragraph.segments.length - 1 : 0]
-        );
-    }
-}
-&nbsp;
-function getSelectionsInternal(
-    path: ContentModelBlockGroup[],
-    result: ContentModelSelection[],
-    options?: GetSelectionOptions,
-    treatAllAsSelect?: boolean
-) {
-    const parent = path[0];
-    let hasUnselectedSegment = false;
-    let startingLength = result.length;
-&nbsp;
-    for (let i = 0; i &lt; parent.blocks.length; i++) {
-        const block = parent.blocks[i];
-&nbsp;
-        switch (block.blockType) {
-            case 'BlockGroup':
-                getSelectedParagraphFromBlockGroup(block, path, result, options, treatAllAsSelect);
-                break;
-&nbsp;
-            case 'Table':
-                block.cells.forEach(row =&gt; {
-                    row.forEach(cell =&gt; {
-                        getSelectedParagraphFromBlockGroup(
-                            cell,
-                            path,
-                            result,
-                            options,
-                            treatAllAsSelect || cell.isSelected
-                        );
-                    });
-                });
-                break;
-&nbsp;
-            case 'Paragraph':
-                const selectedSegments: ContentModelSegment[] = [];
-&nbsp;
-                block.segments.forEach(segment =&gt; {
-                    <span class="missing-if-branch" title="if path not taken" >I</span>if (segment.segmentType == 'General') {
-<span class="cstat-no" title="statement not covered" >                        getSelectedParagraphFromBlockGroup(</span>
-                            segment,
-                            path,
-                            result,
-                            options,
-                            treatAllAsSelect
-                        );
-                    } else if (treatAllAsSelect || segment.isSelected) {
-                        selectedSegments.push(segment);
-                    } else {
-                        hasUnselectedSegment = true;
+                case 'BlockGroup':
+                    switch (block.blockGroupType) {
+<span class="branch-0 cbranch-no" title="branch not covered" >                        case 'General':</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >                        case 'Quote':</span>
+<span class="cstat-no" title="statement not covered" >                            insertBlock(insertPosition, block);</span>
+<span class="cstat-no" title="statement not covered" >                            break;</span>
+                        case 'ListItem':
+                            mergeList(insertPosition, block);
+                            break;
                     }
-                });
+                    break;
+            }
+        }
+    }
 &nbsp;
-                if (selectedSegments.length &gt; 0) {
-                    result.push({
-                        paragraph: block,
-                        segments: selectedSegments,
-                        path: [...path],
-                    });
+    normalizeContentModel(target);
+}
+&nbsp;
+function mergeParagraph(
+    markerPosition: InsertPosition,
+    newPara: ContentModelParagraph,
+    mergeToCurrentParagraph: boolean
+) {
+    const { paragraph, marker } = markerPosition;
+    const newParagraph = mergeToCurrentParagraph ? paragraph : splitParagraph(markerPosition);
+    const segmentIndex = newParagraph.segments.indexOf(marker);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (segmentIndex &gt;= 0) {
+        newParagraph.segments.splice(segmentIndex, 0, ...newPara.segments);
+    }
+}
+&nbsp;
+function mergeTable(
+    markerPosition: InsertPosition,
+    newTable: ContentModelTable,
+    source: ContentModelDocument
+) {
+    const { tableContext } = markerPosition;
+&nbsp;
+    if (tableContext &amp;&amp; source.blocks.length == 1 &amp;&amp; source.blocks[0] == newTable) {
+        const { table, colIndex, rowIndex } = tableContext;
+        for (let i = 0; i &lt; newTable.cells.length; i++) {
+            for (let j = 0; j &lt; newTable.cells[i].length; j++) {
+                const newCell = newTable.cells[i][j];
+&nbsp;
+                if (i == 0 &amp;&amp; colIndex + j &gt;= table.cells[0].length) {
+                    for (let k = 0; k &lt; rowIndex; k++) {
+                        const leftCell = table.cells[k]<span class="branch-0 cbranch-no" title="branch not covered" >?.[c</span>olIndex + j - 1];
+                        table.cells[k][colIndex + j] = createTableCell(
+                            false /*spanLeft*/,
+                            false /*spanAbove*/,
+                            leftCell<span class="branch-0 cbranch-no" title="branch not covered" >?.i</span>sHeader,
+                            leftCell<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>ormat
+                        );
+                    }
                 }
 &nbsp;
-                break;
+                if (j == 0 &amp;&amp; rowIndex + i &gt;= table.cells.length) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (!table.cells[rowIndex + i]) {
+                        table.cells[rowIndex + i] = [];
+                    }
+&nbsp;
+                    for (let k = 0; k &lt; colIndex; k++) {
+                        const aboveCell = table.cells[rowIndex + i - 1]<span class="branch-0 cbranch-no" title="branch not covered" >?.[k</span>];
+                        table.cells[rowIndex + i][k] = createTableCell(
+                            false /*spanLeft*/,
+                            false /*spanAbove*/,
+                            false /*isHeader*/,
+                            aboveCell<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>ormat
+                        );
+                    }
+                }
+&nbsp;
+                table.cells[rowIndex + i][colIndex + j] = newCell;
+&nbsp;
+                if (i == 0 &amp;&amp; j == 0) {
+                    addSegment(newCell, createSelectionMarker());
+                }
+            }
         }
+&nbsp;
+        normalizeTable(table);
+        applyTableFormat(table, undefined /*newFormat*/, true /*keepCellShade*/);
+    } else {
+        insertBlock(markerPosition, newTable);
+    }
+}
+&nbsp;
+function mergeList(markerPosition: InsertPosition, newList: ContentModelListItem) {
+    splitParagraph(markerPosition);
+&nbsp;
+    const { path, paragraph } = markerPosition;
+&nbsp;
+    const listItemIndex = getClosestAncestorBlockGroupIndex(path, ['ListItem']);
+    const listItem = path[listItemIndex] as ContentModelListItem;
+    const listParent = path[listItemIndex + 1]; // It is ok here when index is -1, that means there is no list and we just insert a new paragraph and use path[0] as its parent
+    const blockIndex = listParent.blocks.indexOf(listItem || paragraph);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (blockIndex &gt;= 0) {
+        listParent.blocks.splice(blockIndex, 0, newList);
     }
 &nbsp;
-    if (
-        parent.blockGroupType == 'ListItem' &amp;&amp;
-        !hasUnselectedSegment &amp;&amp;
-        options?.includeFormatHolder
-    ) {
-        result.splice(startingLength, 0 /*deleteCount*/, {
-            paragraph: null,
-            segments: [parent.formatHolder],
-            path: [...path],
+    if (listItem) {
+        listItem<span class="branch-0 cbranch-no" title="branch not covered" >?.l</span>evels.forEach((level, i) =&gt; {
+            newList.levels[i] = { ...level };
         });
     }
 }
 &nbsp;
-function getSelectedParagraphFromBlockGroup(
-    group: ContentModelBlockGroup,
-    path: ContentModelBlockGroup[],
-    result: ContentModelSelection[],
-    options?: GetSelectionOptions,
-    treatAllAsSelect?: boolean
-) {
-    path.unshift(group);
-    getSelectionsInternal(path, result, options, treatAllAsSelect);
-    path.shift();
+function splitParagraph(markerPosition: InsertPosition) {
+    const { paragraph, marker, path } = markerPosition;
+    const segmentIndex = paragraph.segments.indexOf(marker);
+    const paraIndex = path[0].blocks.indexOf(paragraph);
+    const newParagraph = createParagraph(false /*isImplicit*/, paragraph.format);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (segmentIndex &gt;= 0) {
+        newParagraph.segments = paragraph.segments.splice(segmentIndex);
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (paraIndex &gt;= 0) {
+        path[0].blocks.splice(paraIndex + 1, 0, newParagraph);
+    }
+&nbsp;
+    const listItemIndex = getClosestAncestorBlockGroupIndex(
+        path,
+        ['ListItem'],
+        ['Quote', 'TableCell']
+    );
+    const listItem = path[listItemIndex] as ContentModelListItem;
+&nbsp;
+    if (listItem) {
+        const listParent = listItemIndex &gt;= 0 ? path[listItemIndex + 1] : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+        const blockIndex = listParent ? listParent.blocks.indexOf(listItem) : <span class="branch-1 cbranch-no" title="branch not covered" >-1;</span>
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (blockIndex &gt;= 0 &amp;&amp; listParent) {
+            const newListItem = createListItem(listItem.levels, listItem.formatHolder.format);
+&nbsp;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (paraIndex &gt;= 0) {
+                newListItem.blocks = listItem.blocks.splice(paraIndex + 1);
+            }
+&nbsp;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (blockIndex &gt;= 0) {
+                listParent.blocks.splice(blockIndex + 1, 0, newListItem);
+            }
+&nbsp;
+            path[listItemIndex] = newListItem;
+        }
+    }
+&nbsp;
+    markerPosition.paragraph = newParagraph;
+&nbsp;
+    return newParagraph;
+}
+&nbsp;
+function insertBlock(markerPosition: InsertPosition, block: ContentModelBlock) {
+    const { path } = markerPosition;
+    const newPara = splitParagraph(markerPosition);
+    const blockIndex = path[0].blocks.indexOf(newPara);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (blockIndex &gt;= 0) {
+        path[0].blocks.splice(blockIndex, 0, block);
+    }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -643,7 +673,7 @@ function getSelectedParagraphFromBlockGroup(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 15 2022 06:01:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 06:42:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

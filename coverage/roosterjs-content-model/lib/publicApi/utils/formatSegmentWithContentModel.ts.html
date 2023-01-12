@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -103,8 +103,13 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -123,36 +128,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-yes">103x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">101x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">101x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">101x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { arrayPush } from 'roosterjs-editor-dom';
-import { ContentModelSegment } from '../../publicTypes/segment/ContentModelSegment';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelSegmentFormat } from '../../publicTypes/format/ContentModelSegmentFormat';
 import { formatWithContentModel } from './formatWithContentModel';
-import { getSelections } from '../../modelApi/selection/getSelections';
+import { getSelectedSegments } from '../../modelApi/selection/collectSelections';
 import {
     DomToModelOption,
     IExperimentalContentModelEditor,
@@ -164,33 +175,40 @@ import {
 export function formatSegmentWithContentModel(
     editor: IExperimentalContentModelEditor,
     apiName: string,
-    toggleStyleCallback: (segment: ContentModelSegment, isTuringOn: boolean) =&gt; void,
-    segmentHasStyleCallback?: (segment: ContentModelSegment) =&gt; boolean,
+    toggleStyleCallback: (format: ContentModelSegmentFormat, isTuringOn: boolean) =&gt; void,
+    segmentHasStyleCallback?: (format: ContentModelSegmentFormat) =&gt; boolean,
     includingFormatHolder?: boolean,
     domToModelOptions?: DomToModelOption
 ) {
-    const segments: ContentModelSegment[] = [];
-&nbsp;
     formatWithContentModel(
         editor,
         apiName,
         model =&gt; {
-            const selections = getSelections(model, {
-                includeFormatHolder: includingFormatHolder,
-            });
-&nbsp;
-            selections.forEach(selection =&gt; arrayPush(segments, selection.segments));
+            const segments = getSelectedSegments(model, !!includingFormatHolder);
+            const pendingFormat = editor.getPendingFormat();
+            const formats = pendingFormat
+                ? [pendingFormat]
+                : segments.map(segment =&gt; segment.format);
 &nbsp;
             const isTurningOff = segmentHasStyleCallback
-                ? segments.every(segmentHasStyleCallback)
+                ? formats.every(format =&gt; segmentHasStyleCallback(format))
                 : false;
 &nbsp;
-            segments.forEach(segment =&gt; toggleStyleCallback(segment, !isTurningOff));
+            formats.forEach(format =&gt; toggleStyleCallback(format, !isTurningOff));
 &nbsp;
-            return (
-                segments.length &gt; 1 ||
-                (!!segments[0] &amp;&amp; segments[0].segmentType != 'SelectionMarker')
-            );
+            const isCollapsedSelection =
+                segments.length == 1 &amp;&amp; segments[0].segmentType == 'SelectionMarker';
+&nbsp;
+            if (!pendingFormat &amp;&amp; isCollapsedSelection) {
+                editor.setPendingFormat(segments[0].format);
+            }
+&nbsp;
+            if (isCollapsedSelection) {
+                editor.focus();
+                return false;
+            } else {
+                return formats.length &gt; 0;
+            }
         },
         domToModelOptions
     );
@@ -202,7 +220,7 @@ export function formatSegmentWithContentModel(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 15 2022 06:01:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Jan 12 2023 06:42:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
