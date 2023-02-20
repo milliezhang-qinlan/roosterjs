@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for roosterjs-content-model/lib/publicPlugin/ContentModelPlugin.ts</title>
+    <title>Code coverage report for roosterjs-content-model/lib/modelToDom/contentModelToDom.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/publicPlugin</a> ContentModelPlugin.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelToDom</a> contentModelToDom.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.14% </span>
+                <span class="strong">15.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/35</span>
+                <span class='fraction'>5/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>35/40</span>
+                <span class='fraction'>0/42</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.14% </span>
+                <span class="strong">16.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/35</span>
+                <span class='fraction'>5/31</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -171,26 +171,81 @@
 <a name='L112'></a><a href='#L112'>112</a>
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -200,31 +255,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -232,178 +278,126 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelSegmentFormat } from '../publicTypes/format/ContentModelSegmentFormat';
-import { createText } from '../modelApi/creators/createText';
-import { EditorPlugin, IEditor, Keys, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
-import { IExperimentalContentModelEditor } from '../publicTypes/IExperimentalContentModelEditor';
-import { iterateSelections } from '../modelApi/selection/iterateSelections';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelDocument } from '../publicTypes/group/ContentModelDocument';
+import { createModelToDomContext } from './context/createModelToDomContext';
+import { createRange, Position, toArray } from 'roosterjs-editor-dom';
+import { EditorContext } from '../publicTypes/context/EditorContext';
+import { isNodeOfType } from '../domUtils/isNodeOfType';
+import { ModelToDomBlockAndSegmentNode } from '../publicTypes/context/ModelToDomSelectionContext';
+import { ModelToDomContext } from '../publicTypes/context/ModelToDomContext';
+import { ModelToDomOption } from '../publicTypes/IContentModelEditor';
+import { optimize } from './optimizers/optimize';
+import {
+    NodePosition,
+    NodeType,
+    SelectionRangeEx,
+    SelectionRangeTypes,
+} from 'roosterjs-editor-types';
 &nbsp;
 /**
- * ContentModel plugins helps editor to do editing operation on top of content model.
- * This includes:
- * 1. Handle pending format changes when selection is collapsed
+ * Create DOM tree fragment from Content Model document
+ * @param doc Document object of the target DOM tree
+ * @param model The content model document to generate DOM tree from
+ * @param editorContext Content for Content Model editor
+ * @param option Additional options to customize the behavior of Content Model to DOM conversion
+ * @returns A tuple of the following 3 objects:
+ * 1. Document Fragment that contains the DOM tree generated from the given model
+ * 2. A SelectionRangeEx object that contains selection info from the model if any, or null
+ * 3. An array entity DOM wrapper and its placeholder node pair for reusable root level entities.
  */
-export default class ContentModelPlugin implements EditorPlugin {
-    private editor: IExperimentalContentModelEditor | null = null;
+export default function <span class="fstat-no" title="function not covered" >contentModelToDom(</span>
+    doc: Document,
+    model: ContentModelDocument,
+    editorContext: EditorContext,
+    option?: ModelToDomOption
+): [DocumentFragment, SelectionRangeEx | null, Record&lt;string, HTMLElement&gt;] {
+    const fragment = <span class="cstat-no" title="statement not covered" >doc.createDocumentFragment();</span>
+    const modelToDomContext = <span class="cstat-no" title="statement not covered" >createModelToDomContext(editorContext, option);</span>
 &nbsp;
-    /**
-     * Get name of this plugin
-     */
-<span class="fstat-no" title="function not covered" >    getName(</span>) {
-<span class="cstat-no" title="statement not covered" >        return 'ContentModel';</span>
-    }
+<span class="cstat-no" title="statement not covered" >    modelToDomContext.modelHandlers.blockGroup(doc, fragment, model, modelToDomContext);</span>
+<span class="cstat-no" title="statement not covered" >    optimize(fragment, 2 /*optimizeLevel*/);</span>
 &nbsp;
-    /**
-     * The first method that editor will call to a plugin when editor is initializing.
-     * It will pass in the editor instance, plugin should take this chance to save the
-     * editor reference so that it can call to any editor method or format API later.
-     * @param editor The editor object
-     */
-    initialize(editor: IEditor) {
-        // TODO: Later we may need a different interface for Content Model editor plugin
-        this.editor = editor as IExperimentalContentModelEditor;
-    }
+    const range = <span class="cstat-no" title="statement not covered" >extractSelectionRange(modelToDomContext);</span>
 &nbsp;
-    /**
-     * The last method that editor will call to a plugin before it is disposed.
-     * Plugin can take this chance to clear the reference to editor. After this method is
-     * called, plugin should not call to any editor method since it will result in error.
-     */
-    dispose() {
-        this.editor = null;
-    }
+<span class="cstat-no" title="statement not covered" >    fragment.normalize();</span>
 &nbsp;
-    /**
-     * Core method for a plugin. Once an event happens in editor, editor will call this
-     * method of each plugin to handle the event as long as the event is not handled
-     * exclusively by another plugin.
-     * @param event The event to handle:
-     */
-    onPluginEvent(event: PluginEvent) {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (this.editor) {
-            let format: ContentModelSegmentFormat | null;
+<span class="cstat-no" title="statement not covered" >    return [fragment, range, modelToDomContext.entities];</span>
+}
 &nbsp;
-            if (
-                ((event.eventType == PluginEventType.Input &amp;&amp;
-                    !event.rawEvent.isComposing &amp;&amp;
-                    !this.editor.isInIME()) || // In Safari, isComposing will be undfined but isInIME() works
-                    event.eventType == PluginEventType.CompositionEnd) &amp;&amp;
-                event.rawEvent.data &amp;&amp;
-                (format = this.editor.getPendingFormat())
-            ) {
-                applyPendingFormat(this.editor, event.rawEvent.data, format);
-                this.editor.setPendingFormat(null);
-            }
+function <span class="fstat-no" title="function not covered" >extractSelectionRange(</span>context: ModelToDomContext): SelectionRangeEx | null {
+    const {
+        regularSelection: { start<span class="cstat-no" title="statement not covered" >, e</span>nd<span class="cstat-no" title="statement not covered" > },</span>
+        tableSelection,
+        imageSelection,
+    } = <span class="cstat-no" title="statement not covered" >context;</span>
 &nbsp;
-            if (
-                (event.eventType == PluginEventType.KeyDown &amp;&amp;
-                    event.rawEvent.which &gt;= Keys.PAGEUP &amp;&amp;
-                    event.rawEvent.which &lt;= Keys.DOWN) ||
-                event.eventType == PluginEventType.MouseDown ||
-                event.eventType == PluginEventType.ContentChanged
-            ) {
-                this.editor.setPendingFormat(null);
-            }
-        }
+    let startPosition: NodePosition | undefined;
+    let endPosition: NodePosition | undefined;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (imageSelection?.image) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            type: SelectionRangeTypes.ImageSelection,
+            ranges: [createRange(imageSelection.image)],
+            areAllCollapsed: false,
+            image: imageSelection.image,
+        };
+    } else <span class="cstat-no" title="statement not covered" >if (</span>
+        (startPosition = start &amp;&amp; calcPosition(start)) &amp;&amp;
+        (endPosition = end &amp;&amp; calcPosition(end))
+    ) {
+        const range = <span class="cstat-no" title="statement not covered" >createRange(startPosition, endPosition);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            type: SelectionRangeTypes.Normal,
+            ranges: [createRange(startPosition, endPosition)],
+            areAllCollapsed: range.collapsed,
+        };
+    } else <span class="cstat-no" title="statement not covered" >if (tableSelection?.table) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            type: SelectionRangeTypes.TableSelection,
+            ranges: [],
+            areAllCollapsed: false,
+            table: tableSelection.table,
+            coordinates: {
+                firstCell: tableSelection.firstCell,
+                lastCell: tableSelection.lastCell,
+            },
+        };
+    } else {
+<span class="cstat-no" title="statement not covered" >        return null;</span>
     }
 }
 &nbsp;
-function applyPendingFormat(
-    editor: IExperimentalContentModelEditor,
-    data: string,
-    format: ContentModelSegmentFormat
-) {
-    const model = editor.createContentModel();
-    let isChanged = false;
+function <span class="fstat-no" title="function not covered" >calcPosition(</span>pos: ModelToDomBlockAndSegmentNode): NodePosition | undefined {
+    let result: NodePosition | undefined;
 &nbsp;
-    iterateSelections([model], (_, __, block, segments) =&gt; {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (
-            block<span class="branch-0 cbranch-no" title="branch not covered" >?.b</span>lockType == 'Paragraph' &amp;&amp;
-            segments<span class="branch-0 cbranch-no" title="branch not covered" >?.l</span>ength == 1 &amp;&amp;
-            segments[0].segmentType == 'SelectionMarker'
-        ) {
-            const index = block.segments.indexOf(segments[0]);
-            const previousSegment = block.segments[index - 1];
-&nbsp;
-            if (previousSegment?.segmentType == 'Text') {
-                const text = previousSegment.text;
-&nbsp;
-                <span class="missing-if-branch" title="else path not taken" >E</span>if (text.substr(-data.length, data.length) == data) {
-                    previousSegment.text = text.substring(0, text.length - data.length);
-&nbsp;
-                    const newText = createText(data, {
-                        ...previousSegment.format,
-                        ...format,
-                    });
-&nbsp;
-                    block.segments.splice(index, 0, newText);
-                    isChanged = true;
-                }
-            }
+<span class="cstat-no" title="statement not covered" >    if (pos.block) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!pos.segment) {</span>
+<span class="cstat-no" title="statement not covered" >            result = new Position(pos.block, 0);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (isNodeOfType(pos.segment, NodeType.Text)) {</span>
+<span class="cstat-no" title="statement not covered" >            result = new Position(pos.segment, pos.segment.nodeValue?.length || 0);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            result = new Position(</span>
+                pos.segment.parentNode!,
+                toArray(pos.segment.parentNode!.childNodes as NodeListOf&lt;Node&gt;).indexOf(
+                    pos.segment!
+                ) + 1
+            );
         }
-        return true;
-    });
-&nbsp;
-    if (isChanged) {
-        editor.setContentModel(model);
     }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (isNodeOfType(result?.node, NodeType.DocumentFragment)) {</span>
+<span class="cstat-no" title="statement not covered" >        result = result?.normalize();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return result;</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -412,7 +406,7 @@ function applyPendingFormat(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jan 31 2023 02:38:53 GMT+0000 (Coordinated Universal Time)
+                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

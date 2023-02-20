@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for roosterjs-content-model/lib/modelApi/metadata/updateMetadata.ts</title>
+    <title>Code coverage report for roosterjs-content-model/lib/publicApi/block/setParagraphMargin.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/modelApi/metadata</a> updateMetadata.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/publicApi/block</a> setParagraphMargin.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -91,21 +91,13 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a>
-<a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,79 +107,57 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-yes">199x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">199x</span>
-<span class="cline-any cline-yes">151x</span>
-<span class="cline-any cline-yes">48x</span>
-<span class="cline-any cline-yes">43x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">207x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ContentModelWithDataset } from '../../publicTypes/format/ContentModelWithDataset';
-import { Definition } from 'roosterjs-editor-types';
-import { validate } from 'roosterjs-editor-dom';
-&nbsp;
-const EditingInfoDatasetName = 'editingInfo';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createParagraphDecorator } from '../../modelApi/creators/createParagraphDecorator';
+import { IContentModelEditor } from '../../publicTypes/IContentModelEditor';
+import { formatParagraphWithContentModel } from '../utils/formatParagraphWithContentModel';
 &nbsp;
 /**
- * @internal
+ * Toggles the current block(s) margin properties.
+ * null deletes any existing value, undefined is ignored
+ * @param editor The editor to operate on
+ * @param marginTop value for top margin
+ * @param marginBottom value for bottom margin
  */
-export function updateMetadata&lt;T&gt;(
-    model: ContentModelWithDataset&lt;T&gt;,
-    callback?: (metadata: T | null) =&gt; T | null,
-    definition?: Definition&lt;T&gt;
-): T | null {
-    const metadataString = model.dataset[EditingInfoDatasetName];
-    let obj: T | null = null;
-&nbsp;
-    try {
-        obj = JSON.parse(metadataString) as T;
-    } catch {}
-&nbsp;
-    if (definition &amp;&amp; !validate(obj, definition)) {
-        obj = null;
-    }
-&nbsp;
-    if (callback) {
-        obj = callback(obj);
-&nbsp;
-        if (!obj) {
-            delete model.dataset[EditingInfoDatasetName];
-        } else if (!definition || validate(obj, definition)) {
-            model.dataset[EditingInfoDatasetName] = JSON.stringify(obj);
+export default function setParagraphMargin(
+    editor: IContentModelEditor,
+    marginTop?: string | null,
+    marginBottom?: string | null
+) {
+    formatParagraphWithContentModel(editor, 'setParagraphMargin', para =&gt; {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!para.decorator) {
+            para.decorator = createParagraphDecorator('p');
         }
-    }
 &nbsp;
-    return obj;
-}
+        if (marginTop) {
+            para.format.marginTop = marginTop;
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (marginTop === null) {
+            delete para.format.marginTop;
+        }
 &nbsp;
-/**
- * @internal Check if the given model has metadata
- */
-export function hasMetadata&lt;T&gt;(model: ContentModelWithDataset&lt;T&gt;): boolean {
-    return !!model.dataset[EditingInfoDatasetName];
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (marginBottom) {
+<span class="cstat-no" title="statement not covered" >            para.format.marginBottom = marginBottom;</span>
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (marginBottom === null) {
+<span class="cstat-no" title="statement not covered" >            delete para.format.marginBottom;</span>
+        }
+    });
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -196,7 +166,7 @@ export function hasMetadata&lt;T&gt;(model: ContentModelWithDataset&lt;T&gt;): b
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jan 31 2023 02:38:53 GMT+0000 (Coordinated Universal Time)
+                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

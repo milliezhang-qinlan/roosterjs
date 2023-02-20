@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for roosterjs-content-model/lib/publicApi/insert/insertImage.ts</title>
+    <title>Code coverage report for roosterjs-content-model/lib/publicApi/image/setImageBorder.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/publicApi/insert</a> insertImage.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">roosterjs-content-model/lib/publicApi/image</a> setImageBorder.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
@@ -79,10 +79,7 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -90,40 +87,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { formatWithContentModel } from '../utils/formatWithContentModel';
-import { IExperimentalContentModelEditor } from '../../publicTypes/IExperimentalContentModelEditor';
-import { insertContent } from '../../modelApi/common/insertContent';
-import { readFile } from 'roosterjs-editor-dom';
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import applyImageBorderFormat from '../../modelApi/image/applyImageBorderFormat';
+import formatImageWithContentModel from '../utils/formatImageWithContentModel';
+import { Border } from '../../publicTypes/interface/Border';
+import { ContentModelImage } from '../../publicTypes/segment/ContentModelImage';
+import { IContentModelEditor } from '../../publicTypes/IContentModelEditor';
 &nbsp;
 /**
- * Insert an image into current selected position
- * @param editor The editor to operate on
- * @param file Image Blob file
+ * Set image border style for all selected images at selection.
+ * @param editor The editor instance
+ * @param border the border format object. Ex: { color: 'red', width: '10px', style: 'solid'}, if one of the value in object is undefined
+ * its value will not be changed
+ * @param borderRadius the border radius value, if undefined, the border radius will keep the actual value
  */
-export default function insertImage(editor: IExperimentalContentModelEditor, file: File) {
-    readFile(file, dataUrl =&gt; {
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (dataUrl &amp;&amp; !editor.isDisposed()) {
-            formatWithContentModel(editor, 'insertImage', model =&gt; {
-                const image = editor.getDocument().createElement('img');
-&nbsp;
-                image.src = dataUrl;
-                insertContent(model, image);
-                return true;
-            });
-        }
+export default function setImageBorder(
+    editor: IContentModelEditor,
+    border: Border,
+    borderRadius?: string
+) {
+    formatImageWithContentModel(editor, 'setImageBorder', (image: ContentModelImage) =&gt; {
+        applyImageBorderFormat(image, border, borderRadius);
     });
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -133,7 +130,7 @@ export default function insertImage(editor: IExperimentalContentModelEditor, fil
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jan 31 2023 02:38:53 GMT+0000 (Coordinated Universal Time)
+                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
