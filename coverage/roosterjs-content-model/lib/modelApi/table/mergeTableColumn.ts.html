@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -110,7 +110,14 @@
 <a name='L51'></a><a href='#L51'>51</a>
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,12 +160,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,14 +200,14 @@ export function mergeTableColumn(
     if (sel) {
         const mergingColIndex = mergeLeft ? sel.firstCol : sel.lastCol + 1;
 &nbsp;
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (mergingColIndex &gt; 0 &amp;&amp; mergingColIndex &lt; table.cells[0].length) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (mergingColIndex &gt; 0 &amp;&amp; mergingColIndex &lt; table.rows[0].cells.length) {
             for (let rowIndex = sel.firstRow; rowIndex &lt;= sel.lastRow; rowIndex++) {
-                const cell = table.cells[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.[m</span>ergingColIndex];
+                const cell = table.rows[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.c</span>ells[mergingColIndex];
 &nbsp;
                 <span class="missing-if-branch" title="else path not taken" >E</span>if (
                     cell &amp;&amp;
                     canMergeCells(
-                        table.cells,
+                        table.rows,
                         rowIndex,
                         mergingColIndex - 1,
                         rowIndex,
@@ -204,14 +218,21 @@ export function mergeTableColumn(
 &nbsp;
                     let newSelectedCol = mergingColIndex;
 &nbsp;
-                    while (table.cells[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.[n</span>ewSelectedCol]<span class="branch-0 cbranch-no" title="branch not covered" >?.s</span>panLeft) {
+                    while (table.rows[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.c</span>ells[newSelectedCol]<span class="branch-0 cbranch-no" title="branch not covered" >?.s</span>panLeft) {
+                        delete table.rows[rowIndex].cells[newSelectedCol].cachedElement;
                         newSelectedCol--;
                     }
 &nbsp;
-                    <span class="missing-if-branch" title="else path not taken" >E</span>if (table.cells[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.[n</span>ewSelectedCol]) {
-                        table.cells[rowIndex][newSelectedCol].isSelected = true;
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (table.rows[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.c</span>ells[newSelectedCol]) {
+                        table.rows[rowIndex].cells[newSelectedCol].isSelected = true;
+&nbsp;
+                        delete table.rows[rowIndex].cells[newSelectedCol].cachedElement;
                     }
+&nbsp;
+                    delete cell.cachedElement;
                 }
+&nbsp;
+                delete table.rows[rowIndex].cachedElement;
             }
         }
     }
@@ -223,7 +244,7 @@ export function mergeTableColumn(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 20 2023 03:18:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

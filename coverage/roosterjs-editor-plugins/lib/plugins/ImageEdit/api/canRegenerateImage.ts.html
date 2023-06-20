@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>12/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -80,24 +80,32 @@
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
-<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -109,19 +117,23 @@
  * @param img The image element to test
  * @returns True when we can regenerate the edited image, otherwise false
  */
-export default function <span class="fstat-no" title="function not covered" >canRegenerateImage(</span>img: HTMLImageElement): boolean {
-<span class="cstat-no" title="statement not covered" >    if (!img) {</span>
-<span class="cstat-no" title="statement not covered" >        return false;</span>
+export default function canRegenerateImage(img: HTMLImageElement): boolean {
+    if (!img) {
+        return false;
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const canvas = <span class="cstat-no" title="statement not covered" >img.ownerDocument.createElement('canvas');</span>
-<span class="cstat-no" title="statement not covered" >        canvas.width = 10;</span>
-<span class="cstat-no" title="statement not covered" >        canvas.height = 10;</span>
-        const context = <span class="cstat-no" title="statement not covered" >canvas.getContext('2d');</span>
-<span class="cstat-no" title="statement not covered" >        context.drawImage(img, 0, 0);</span>
-<span class="cstat-no" title="statement not covered" >        context.getImageData(0, 0, 1, 1);</span>
-<span class="cstat-no" title="statement not covered" >        return true;</span>
+    try {
+        const canvas = img.ownerDocument.createElement('canvas');
+        canvas.width = 10;
+        canvas.height = 10;
+        const context = canvas.getContext('2d');
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (context) {
+            context.drawImage(img, 0, 0);
+            context.getImageData(0, 0, 1, 1);
+            return true;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return false;</span>
     } catch {
 <span class="cstat-no" title="statement not covered" >        return false;</span>
     }
@@ -133,7 +145,7 @@ export default function <span class="fstat-no" title="function not covered" >can
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 20 2023 03:18:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>

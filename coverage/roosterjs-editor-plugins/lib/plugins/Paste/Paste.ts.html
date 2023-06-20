@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>46/46</span>
+                <span class='fraction'>48/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.31% </span>
+                <span class="strong">85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/13</span>
+                <span class='fraction'>17/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>44/44</span>
+                <span class='fraction'>46/46</span>
             </div>
         
             
@@ -156,7 +156,20 @@
 <a name='L97'></a><a href='#L97'>97</a>
 <a name='L98'></a><a href='#L98'>98</a>
 <a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -167,7 +180,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,6 +190,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,6 +249,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -261,13 +287,20 @@ import convertPastedContentFromExcel from './excelConverter/convertPastedContent
 import convertPastedContentFromOfficeOnline from './officeOnlineConverter/convertPastedContentFromOfficeOnline';
 import convertPastedContentFromPowerPoint from './pptConverter/convertPastedContentFromPowerPoint';
 import convertPastedContentFromWord from './wordConverter/convertPastedContentFromWord';
-import getPasteSource from './sourceValidations/getPasteSource';
 import handleLineMerge from './lineMerge/handleLineMerge';
 import sanitizeHtmlColorsFromPastedContent from './sanitizeHtmlColorsFromPastedContent/sanitizeHtmlColorsFromPastedContent';
 import sanitizeLinks from './sanitizeLinks/sanitizeLinks';
-import { EditorPlugin, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
-import { GOOGLE_SHEET_NODE_NAME } from './sourceValidations/constants';
-import { KnownSourceType } from './sourceValidations/KnownSourceType';
+import { getPasteSource } from 'roosterjs-editor-dom';
+import { KnownPasteSourceType } from 'roosterjs-editor-types';
+import {
+    EditorPlugin,
+    IEditor,
+    PasteType,
+    PluginEvent,
+    PluginEventType,
+} from 'roosterjs-editor-types';
+&nbsp;
+const GOOGLE_SHEET_NODE_NAME = 'google-sheets-html-origin';
 &nbsp;
 /**
  * Paste plugin, handles BeforePaste event and reformat some special content, including:
@@ -276,7 +309,7 @@ import { KnownSourceType } from './sourceValidations/KnownSourceType';
  * 3. Content copied from Word Online or OneNote Online
  */
 export default class Paste implements EditorPlugin {
-    private editor: IEditor;
+    private editor: IEditor | null = null;
 &nbsp;
     /**
      * Construct a new instance of Paste class
@@ -316,32 +349,38 @@ export default class Paste implements EditorPlugin {
      * @param event PluginEvent object
      */
     onPluginEvent(event: PluginEvent) {
-        if (event.eventType == PluginEventType.BeforePaste) {
+        if (this.editor &amp;&amp; event.eventType == PluginEventType.BeforePaste) {
             const { fragment, sanitizingOption } = event;
             const trustedHTMLHandler = this.editor.getTrustedHTMLHandler();
 &nbsp;
             switch (getPasteSource(event, this.convertSingleImageBody)) {
-                case KnownSourceType.WordDesktop:
+                case KnownPasteSourceType.WordDesktop:
                     // Handle HTML copied from Word
                     convertPastedContentFromWord(event);
                     break;
-                case KnownSourceType.ExcelDesktop:
-                    // Handle HTML copied from Excel
-                    convertPastedContentFromExcel(event, trustedHTMLHandler);
+                case KnownPasteSourceType.ExcelDesktop:
+                case KnownPasteSourceType.ExcelOnline:
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (
+                        event.pasteType === PasteType.Normal ||
+<span class="branch-1 cbranch-no" title="branch not covered" >                        event.pasteType === PasteType.MergeFormat</span>
+                    ) {
+                        // Handle HTML copied from Excel
+                        convertPastedContentFromExcel(event, trustedHTMLHandler);
+                    }
                     break;
-                case KnownSourceType.PowerPointDesktop:
+                case KnownPasteSourceType.PowerPointDesktop:
                     convertPastedContentFromPowerPoint(event, trustedHTMLHandler);
                     break;
-                case KnownSourceType.WacComponents:
-                    convertPastedContentFromOfficeOnline(fragment);
+                case KnownPasteSourceType.WacComponents:
+                    convertPastedContentFromOfficeOnline(fragment, sanitizingOption);
                     break;
-                case KnownSourceType.GoogleSheets:
+                case KnownPasteSourceType.GoogleSheets:
                     sanitizingOption.additionalTagReplacements[GOOGLE_SHEET_NODE_NAME] = '*';
                     break;
-                case KnownSourceType.SingleImage:
+                case KnownPasteSourceType.SingleImage:
                     convertPasteContentForSingleImage(event, trustedHTMLHandler);
                     break;
-                case KnownSourceType.Default:
+                case KnownPasteSourceType.Default:
                     convertPastedContentForLI(fragment);
                     handleLineMerge(fragment);
                     break;
@@ -361,7 +400,7 @@ export default class Paste implements EditorPlugin {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 20 2023 03:18:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

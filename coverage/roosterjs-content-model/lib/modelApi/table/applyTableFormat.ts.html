@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.43% </span>
+                <span class="strong">81.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>74/92</span>
+                <span class='fraction'>80/98</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.1% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>27/29</span>
+                <span class='fraction'>30/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.75% </span>
+                <span class="strong">81.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>63/79</span>
+                <span class='fraction'>69/85</span>
             </div>
         
             
@@ -310,7 +310,17 @@
 <a name='L251'></a><a href='#L251'>251</a>
 <a name='L252'></a><a href='#L252'>252</a>
 <a name='L253'></a><a href='#L253'>253</a>
-<a name='L254'></a><a href='#L254'>254</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -355,6 +365,9 @@
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -363,6 +376,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -567,7 +587,7 @@
 import { BorderKeys } from '../../formatHandlers/common/borderFormatHandler';
 import { combineBorderValue, extractBorderValues } from '../../domUtils/borderValues';
 import { ContentModelTable } from '../../publicTypes/block/ContentModelTable';
-import { ContentModelTableCell } from '../../publicTypes/group/ContentModelTableCell';
+import { ContentModelTableRow } from '../../publicTypes/block/ContentModelTableRow';
 import { setTableCellBackgroundColor } from './setTableCellBackgroundColor';
 import { TableBorderFormat } from 'roosterjs-editor-types';
 import { TableMetadataFormat } from '../../publicTypes/format/formatParts/TableMetadataFormat';
@@ -596,7 +616,7 @@ export function applyTableFormat(
     newFormat?: TableMetadataFormat,
     keepCellShade?: boolean
 ) {
-    const { cells } = table;
+    const { rows } = table;
 &nbsp;
     updateTableMetadata(table, format =&gt; {
         const effectiveMetadata = {
@@ -605,29 +625,39 @@ export function applyTableFormat(
             ...(newFormat || {}),
         };
 &nbsp;
-        const bgColorOverrides = updateBgColorOverrides(cells, !keepCellShade);
+        const bgColorOverrides = updateBgColorOverrides(rows, !keepCellShade);
 &nbsp;
-        formatBorders(cells, effectiveMetadata);
-        formatBackgroundColors(cells, effectiveMetadata, bgColorOverrides);
-        setFirstColumnFormat(cells, effectiveMetadata, bgColorOverrides);
-        setHeaderRowFormat(cells, effectiveMetadata, bgColorOverrides);
+        delete table.cachedElement;
+&nbsp;
+        clearCache(rows);
+        formatBorders(rows, effectiveMetadata);
+        formatBackgroundColors(rows, effectiveMetadata, bgColorOverrides);
+        setFirstColumnFormat(rows, effectiveMetadata, bgColorOverrides);
+        setHeaderRowFormat(rows, effectiveMetadata, bgColorOverrides);
 &nbsp;
         return effectiveMetadata;
     });
 }
 &nbsp;
-function updateBgColorOverrides(
-    cells: ContentModelTableCell[][],
-    forceClear: boolean
-): boolean[][] {
+function clearCache(rows: ContentModelTableRow[]) {
+    rows.forEach(row =&gt; {
+        row.cells.forEach(cell =&gt; {
+            delete cell.cachedElement;
+        });
+&nbsp;
+        delete row.cachedElement;
+    });
+}
+&nbsp;
+function updateBgColorOverrides(rows: ContentModelTableRow[], forceClear: boolean): boolean[][] {
     const result: boolean[][] = [];
 &nbsp;
-    cells.forEach(row =&gt; {
+    rows.forEach(row =&gt; {
         const currentRow: boolean[] = [];
 &nbsp;
         result.push(currentRow);
 &nbsp;
-        row.forEach(cell =&gt; {
+        row.cells.forEach(cell =&gt; {
             updateTableCellMetadata(cell, metadata =&gt; {
                 if (metadata &amp;&amp; forceClear) {
                     currentRow.push(false);
@@ -703,16 +733,16 @@ const BorderFormatters: Record&lt;TableBorderFormat, ShouldUseTransparentBorder&
     [TableBorderFormat.CLEAR]: () =&gt; [true, true, true, true],
 };
 &nbsp;
-function formatBorders(cells: ContentModelTableCell[][], format: TableMetadataFormat) {
-    cells.forEach((row, rowIndex) =&gt; {
-        row.forEach((cell, cellIndex) =&gt; {
+function formatBorders(rows: ContentModelTableRow[], format: TableMetadataFormat) {
+    rows.forEach((row, rowIndex) =&gt; {
+        row.cells.forEach((cell, cellIndex) =&gt; {
             const transparentBorderMatrix = BorderFormatters[
                 format.tableBorderFormat as TableBorderFormat
             ]({
                 firstRow: rowIndex === 0,
-                lastRow: rowIndex === cells.length - 1,
+                lastRow: rowIndex === rows.length - 1,
                 firstColumn: cellIndex === 0,
-                lastColumn: cellIndex === row.length - 1,
+                lastColumn: cellIndex === row.cells.length - 1,
             });
 &nbsp;
             const formatColor = [
@@ -736,14 +766,14 @@ function formatBorders(cells: ContentModelTableCell[][], format: TableMetadataFo
 }
 &nbsp;
 function formatBackgroundColors(
-    cells: ContentModelTableCell[][],
+    rows: ContentModelTableRow[],
     format: TableMetadataFormat,
     bgColorOverrides: boolean[][]
 ) {
     const { hasBandedRows, hasBandedColumns, bgColorOdd, bgColorEven } = format;
 &nbsp;
-    cells.forEach((row, rowIndex) =&gt; {
-        row.forEach((cell, colIndex) =&gt; {
+    rows.forEach((row, rowIndex) =&gt; {
+        row.cells.forEach((cell, colIndex) =&gt; {
             if (!bgColorOverrides[rowIndex][colIndex]) {
                 const color =
                     hasBandedRows || hasBandedColumns
@@ -760,12 +790,12 @@ function formatBackgroundColors(
 }
 &nbsp;
 function setFirstColumnFormat(
-    cells: ContentModelTableCell[][],
+    rows: ContentModelTableRow[],
     format: Partial&lt;TableMetadataFormat&gt;,
     bgColorOverrides: boolean[][]
 ) {
-    cells.forEach((row, rowIndex) =&gt; {
-        row.forEach((cell, cellIndex) =&gt; {
+    rows.forEach((row, rowIndex) =&gt; {
+        row.cells.forEach((cell, cellIndex) =&gt; {
             <span class="missing-if-branch" title="if path not taken" >I</span>if (format.hasFirstColumn &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >cellIndex === 0)</span> {
 <span class="cstat-no" title="statement not covered" >                cell.isHeader = true;</span>
 &nbsp;
@@ -774,7 +804,7 @@ function setFirstColumnFormat(
 <span class="cstat-no" title="statement not covered" >                    setTableCellBackgroundColor(cell, null /*color*/);</span>
                 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >                if (rowIndex !== cells.length - 1 &amp;&amp; rowIndex !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >                if (rowIndex !== rows.length - 1 &amp;&amp; rowIndex !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >                    setBorderColor(cell.format, 'borderBottom');</span>
                 }
             } else {
@@ -785,13 +815,13 @@ function setFirstColumnFormat(
 }
 &nbsp;
 function setHeaderRowFormat(
-    cells: ContentModelTableCell[][],
+    rows: ContentModelTableRow[],
     format: TableMetadataFormat,
     bgColorOverrides: boolean[][]
 ) {
     const rowIndex = 0;
 &nbsp;
-    cells[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.f</span>orEach((cell, cellIndex) =&gt; {
+    rows[rowIndex]<span class="branch-0 cbranch-no" title="branch not covered" >?.c</span>ells.forEach((cell, cellIndex) =&gt; {
         cell.isHeader = format.hasHeaderRow;
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (format.hasHeaderRow &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >format.headerRowColor)</span> {
@@ -823,7 +853,7 @@ function getBorderStyleFromColor(color?: string): string {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 20 2023 03:18:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

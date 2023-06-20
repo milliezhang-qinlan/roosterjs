@@ -88,6 +88,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="roosterjs_editor_types.darkcolorhandler.html#findlightcolorfromdarkcolor" class="tsd-kind-icon">find<wbr>Light<wbr>Color<wbr>From<wbr>Dark<wbr>Color</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="roosterjs_editor_types.darkcolorhandler.html#getknowncolorscopy" class="tsd-kind-icon">get<wbr>Known<wbr>Colors<wbr>Copy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="roosterjs_editor_types.darkcolorhandler.html#parsecolorvalue" class="tsd-kind-icon">parse<wbr>Color<wbr>Value</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="roosterjs_editor_types.darkcolorhandler.html#registercolor" class="tsd-kind-icon">register<wbr>Color</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="roosterjs_editor_types.darkcolorhandler.html#reset" class="tsd-kind-icon">reset</a></li>
@@ -99,16 +101,69 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="parsecolorvalue" class="tsd-anchor"></a>
-					<h3>parse<wbr>Color<wbr>Value</h3>
+					<a name="findlightcolorfromdarkcolor" class="tsd-anchor"></a>
+					<h3>find<wbr>Light<wbr>Color<wbr>From<wbr>Dark<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Color<wbr>Value<span class="tsd-signature-symbol">(</span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="roosterjs_editor_types.colorkeyandvalue.html" class="tsd-signature-type" data-tsd-kind="Interface">ColorKeyAndValue</a></li>
+						<li class="tsd-signature tsd-kind-icon">find<wbr>Light<wbr>Color<wbr>From<wbr>Dark<wbr>Color<span class="tsd-signature-symbol">(</span>darkColor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/1884e38/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L44">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/d1b1982/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L59">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:59</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Find related light mode color from dark mode color.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>darkColor: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The existing dark color</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getknowncolorscopy" class="tsd-anchor"></a>
+					<h3>get<wbr>Known<wbr>Colors<wbr>Copy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Known<wbr>Colors<wbr>Copy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="roosterjs_editor_types.modeindependentcolor.html" class="tsd-signature-type" data-tsd-kind="Interface">ModeIndependentColor</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/d1b1982/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L53">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:53</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a copy of known colors</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="roosterjs_editor_types.modeindependentcolor.html" class="tsd-signature-type" data-tsd-kind="Interface">ModeIndependentColor</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="parsecolorvalue" class="tsd-anchor"></a>
+					<h3>parse<wbr>Color<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Color<wbr>Value<span class="tsd-signature-symbol">(</span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isInDarkMode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="roosterjs_editor_types.colorkeyandvalue.html" class="tsd-signature-type" data-tsd-kind="Interface">ColorKeyAndValue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/d1b1982/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L48">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -123,6 +178,13 @@
 									<h5>color: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The color string to parse</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isInDarkMode: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Whether current content is in dark mode. When set to true, if the color value is not in dark var format,
+										we will treat is as a dark mode color and try to find a matched dark mode color.</p>
 									</div>
 								</li>
 							</ul>
@@ -140,7 +202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/1884e38/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L32">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/d1b1982/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L34">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -184,7 +246,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/1884e38/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L37">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/milliezhang-qinlan/roosterjs/blob/d1b1982/packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts#L39">packages/roosterjs-editor-types/lib/interface/DarkColorHandler.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -240,6 +302,12 @@
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
 						<a href="roosterjs_editor_types.darkcolorhandler.html" class="tsd-kind-icon">Dark<wbr>Color<wbr>Handler</a>
 						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="roosterjs_editor_types.darkcolorhandler.html#findlightcolorfromdarkcolor" class="tsd-kind-icon">find<wbr>Light<wbr>Color<wbr>From<wbr>Dark<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="roosterjs_editor_types.darkcolorhandler.html#getknowncolorscopy" class="tsd-kind-icon">get<wbr>Known<wbr>Colors<wbr>Copy</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="roosterjs_editor_types.darkcolorhandler.html#parsecolorvalue" class="tsd-kind-icon">parse<wbr>Color<wbr>Value</a>
 							</li>

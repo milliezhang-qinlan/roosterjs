@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.2% </span>
+                <span class="strong">88.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>46/51</span>
+                <span class='fraction'>48/54</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.19% </span>
+                <span class="strong">70.59% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>32/42</span>
+                <span class='fraction'>36/51</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.58% </span>
+                <span class="strong">88.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>43/48</span>
+                <span class='fraction'>45/51</span>
             </div>
         
             
@@ -221,7 +221,10 @@
 <a name='L162'></a><a href='#L162'>162</a>
 <a name='L163'></a><a href='#L163'>163</a>
 <a name='L164'></a><a href='#L164'>164</a>
-<a name='L165'></a><a href='#L165'>165</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -267,10 +270,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -297,7 +296,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -313,6 +315,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -327,9 +330,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -430,11 +436,7 @@ export default function setIndentation(
     blockFormat(
         editor,
         (region, start, end) =&gt; {
-            const blocks = getSelectedBlockElementsInRegion(
-                region,
-                true /*createBlockIfEmpty*/,
-                editor.isFeatureEnabled(ExperimentalFeatures.DefaultFormatInSpan)
-            );
+            const blocks = getSelectedBlockElementsInRegion(region, true /*createBlockIfEmpty*/);
             const blockGroups: BlockElement[][] = [[]];
 &nbsp;
             for (let i = 0; i &lt; blocks.length; i++) {
@@ -460,23 +462,27 @@ export default function setIndentation(
                         shouldHandleWithBlockquotes(indentation, editor, startNode)
                     ) {
                         const block = editor.getBlockElementAtNode(vList.rootList);
-                        blockGroups.push([block]);
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if (block) {
+                            blockGroups.push([block]);
+                        }
                     } else {
-<span class="cstat-no" title="statement not covered" >                        indentation == Indentation.Decrease</span>
-                            ? vList.setIndentation(
-                                  start,
-                                  end,
-                                  indentation,
-                                  false /* softOutdent */,
-                                  isTabKeyTextFeaturesEnabled /* preventItemRemoval */
-                              )
-                            : vList.setIndentation(start, end, indentation);
-<span class="cstat-no" title="statement not covered" >                        vList.writeBack(</span>
-                            editor.isFeatureEnabled(
-                                ExperimentalFeatures.ReuseAllAncestorListElements
-                            )
-                        );
-<span class="cstat-no" title="statement not covered" >                        blockGroups.push([]);</span>
+<span class="cstat-no" title="statement not covered" >                        if (start &amp;&amp; end) {</span>
+<span class="cstat-no" title="statement not covered" >                            indentation == Indentation.Decrease</span>
+                                ? vList.setIndentation(
+                                      start,
+                                      end,
+                                      indentation,
+                                      false /* softOutdent */,
+                                      isTabKeyTextFeaturesEnabled /* preventItemRemoval */
+                                  )
+                                : vList.setIndentation(start, end, indentation);
+<span class="cstat-no" title="statement not covered" >                            vList.writeBack(</span>
+                                editor.isFeatureEnabled(
+                                    ExperimentalFeatures.ReuseAllAncestorListElements
+                                )
+                            );
+<span class="cstat-no" title="statement not covered" >                            blockGroups.push([]);</span>
+                        }
                     }
                 } else {
                     blockGroups[blockGroups.length - 1].push(blocks[i]);
@@ -489,11 +495,14 @@ export default function setIndentation(
             const selection = editor.getSelectionRangeEx();
             if (
                 selection.type == SelectionRangeTypes.TableSelection &amp;&amp;
+                selection.coordinates &amp;&amp;
                 isWholeTableSelected(new VTable(selection.table), selection.coordinates)
             ) {
                 if (indentation == Indentation.Decrease) {
                     const quote = editor.getElementAtCursor('blockquote', selection.table);
-                    unwrap(quote);
+                    if (quote) {
+                        unwrap(quote);
+                    }
                 } else <span class="missing-if-branch" title="else path not taken" >E</span>if (indentation == Indentation.Increase) {
                     wrap(selection.table, KnownCreateElementDataIndex.BlockquoteWrapper);
                 }
@@ -556,7 +565,7 @@ function shouldHandleWithBlockquotes(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 20 2023 03:18:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

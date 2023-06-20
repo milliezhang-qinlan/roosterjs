@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">67.55% </span>
+                <span class="strong">65.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>102/151</span>
+                <span class='fraction'>99/152</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.98% </span>
+                <span class="strong">41.03% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>48/98</span>
+                <span class='fraction'>48/117</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.21% </span>
+                <span class="strong">63.7% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>96/145</span>
+                <span class='fraction'>93/146</span>
             </div>
         
             
@@ -428,7 +428,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -614,10 +613,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
@@ -631,6 +626,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -692,20 +692,20 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -778,7 +778,6 @@ import {
     ChangeSource,
     ClearFormatMode,
     DocumentCommand,
-    ExperimentalFeatures,
     IEditor,
     QueryScope,
 } from 'roosterjs-editor-types';
@@ -815,12 +814,12 @@ const TAGS_TO_STOP_UNWRAP = ['TD', 'TH', 'TR', 'TABLE', 'TBODY', 'THEAD'];
  */
 function <span class="fstat-no" title="function not covered" >isMultiBlockSelection(</span>editor: IEditor): boolean {
     let transverser = <span class="cstat-no" title="statement not covered" >editor.getSelectionTraverser();</span>
-    let blockElement = <span class="cstat-no" title="statement not covered" >transverser.currentBlockElement;</span>
+    let blockElement = <span class="cstat-no" title="statement not covered" >transverser?.currentBlockElement;</span>
 <span class="cstat-no" title="statement not covered" >    if (!blockElement) {</span>
 <span class="cstat-no" title="statement not covered" >        return false;</span>
     }
 &nbsp;
-    let nextBlockElement = <span class="cstat-no" title="statement not covered" >transverser.getNextBlockElement();</span>
+    let nextBlockElement = <span class="cstat-no" title="statement not covered" >transverser?.getNextBlockElement();</span>
 &nbsp;
     //At least two blocks are selected
 <span class="cstat-no" title="statement not covered" >    return !!nextBlockElement;</span>
@@ -914,7 +913,7 @@ function <span class="fstat-no" title="function not covered" >removeNotTableDefa
  * @returns `true` if this node, and its parents (minus the children of the contentDiv) have no siblings with text content
  */
 function <span class="fstat-no" title="function not covered" >isNodeWholeBlock(</span>node: Node, editor: IEditor) {
-    let currentNode = <span class="cstat-no" title="statement not covered" >node;</span>
+    let currentNode: ParentNode | Node | null = <span class="cstat-no" title="statement not covered" >node;</span>
 <span class="cstat-no" title="statement not covered" >    while (currentNode &amp;&amp; editor.contains(currentNode.parentNode)) {</span>
 <span class="cstat-no" title="statement not covered" >        if (currentNode.nextSibling || currentNode.previousSibling) {</span>
 <span class="cstat-no" title="statement not covered" >            if (safeInstanceOf(currentNode, 'HTMLLIElement')) {</span>
@@ -922,7 +921,7 @@ function <span class="fstat-no" title="function not covered" >isNodeWholeBlock(<
             }
             let isOnlySiblingWithContent = <span class="cstat-no" title="statement not covered" >true;</span>
 <span class="cstat-no" title="statement not covered" >            currentNode.parentNode?.childNodes.forEach(<span class="fstat-no" title="function not covered" >node </span>=&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                if (node != currentNode &amp;&amp; node.textContent.length) {</span>
+<span class="cstat-no" title="statement not covered" >                if (node != currentNode &amp;&amp; node.textContent?.length) {</span>
 <span class="cstat-no" title="statement not covered" >                    isOnlySiblingWithContent = false;</span>
                 }
             });
@@ -943,7 +942,7 @@ function <span class="fstat-no" title="function not covered" >clearAutoDetectFor
     const isMultiBlock = <span class="cstat-no" title="statement not covered" >isMultiBlockSelection(editor);</span>
 <span class="cstat-no" title="statement not covered" >    if (!isMultiBlock) {</span>
         const transverser = <span class="cstat-no" title="statement not covered" >editor.getSelectionTraverser();</span>
-        const inlineElement = <span class="cstat-no" title="statement not covered" >transverser.currentInlineElement;</span>
+        const inlineElement = <span class="cstat-no" title="statement not covered" >transverser?.currentInlineElement;</span>
         const isPartial =
 <span class="cstat-no" title="statement not covered" >            inlineElement instanceof PartialInlineElement ||</span>
             (inlineElement instanceof NodeInlineElement &amp;&amp;
@@ -966,11 +965,7 @@ function clearBlockFormat(editor: IEditor) {
         editor,
         () =&gt; {
             blockFormat(editor, region =&gt; {
-                const blocks = getSelectedBlockElementsInRegion(
-                    region,
-                    undefined /* createBlockIfEmpty */,
-                    editor.isFeatureEnabled(ExperimentalFeatures.DefaultFormatInSpan)
-                );
+                const blocks = getSelectedBlockElementsInRegion(region);
                 let nodes = collapseNodesInRegion(region, blocks);
 &nbsp;
                 if (editor.contains(region.rootNode)) {
@@ -983,8 +978,13 @@ function clearBlockFormat(editor: IEditor) {
                     }
                 }
 &nbsp;
-                while (nodes.length &gt; 0 &amp;&amp; isNodeInRegion(region, nodes[0].parentNode)) {
-                    nodes = [splitBalancedNodeRange(nodes)];
+                while (
+                    nodes.length &gt; 0 &amp;&amp;
+                    nodes[0].parentNode &amp;&amp;
+                    isNodeInRegion(region, nodes[0].parentNode)
+                ) {
+                    const balancedNodes = splitBalancedNodeRange(nodes);
+                    nodes = balancedNodes ? [balancedNodes] : <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
                 }
 &nbsp;
                 nodes.forEach(clearNodeFormat);
@@ -1044,21 +1044,21 @@ function setDefaultFormat(editor: IEditor) {
         <span class="missing-if-branch" title="else path not taken" >E</span>if (defaultFormat.fontSize) {
             setFontSize(editor, defaultFormat.fontSize);
         }
-        <span class="missing-if-branch" title="else path not taken" >E</span>if (defaultFormat.textColor) {
-            const setColorIgnoredElements = editor.queryElements&lt;HTMLElement&gt;(
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (defaultFormat.textColor) {
+            const setColorIgnoredElements = <span class="cstat-no" title="statement not covered" >editor.queryElements&lt;HTMLElement&gt;(</span>
                 'a *, a',
                 QueryScope.OnSelection
             );
 &nbsp;
             let shouldApplyInlineStyle =
-                setColorIgnoredElements.length &gt; 0
-                    ? <span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >(e</span>lement: HTMLElement) =&gt; <span class="cstat-no" title="statement not covered" >setColorIgnoredElements.</span>indexOf(element) == -1</span>
-                    : null;
+<span class="cstat-no" title="statement not covered" >                setColorIgnoredElements.length &gt; 0</span>
+                    ? <span class="fstat-no" title="function not covered" >(e</span>lement: HTMLElement) =&gt; <span class="cstat-no" title="statement not covered" >setColorIgnoredElements.indexOf(element) == -1</span>
+                    : undefined;
 &nbsp;
-            <span class="missing-if-branch" title="if path not taken" >I</span>if (defaultFormat.textColors) {
+<span class="cstat-no" title="statement not covered" >            if (defaultFormat.textColors) {</span>
 <span class="cstat-no" title="statement not covered" >                setTextColor(editor, defaultFormat.textColors, shouldApplyInlineStyle);</span>
             } else {
-                setTextColor(editor, defaultFormat.textColor, shouldApplyInlineStyle);
+<span class="cstat-no" title="statement not covered" >                setTextColor(editor, defaultFormat.textColor, shouldApplyInlineStyle);</span>
             }
         }
         <span class="missing-if-branch" title="if path not taken" >I</span>if (defaultFormat.backgroundColor) {
@@ -1123,7 +1123,7 @@ export default function clearFormat(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Feb 20 2023 05:51:44 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 20 2023 03:18:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
